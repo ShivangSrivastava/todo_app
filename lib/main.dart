@@ -73,15 +73,17 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                TextField(
-                  controller: controller,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Add Todo',
+                Expanded(
+                  child: TextField(
+                    controller: controller,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Add Todo',
+                    ),
+                    onChanged: (text) {
+                      value = text;
+                    },
                   ),
-                  onChanged: (text) {
-                    value = text;
-                  },
                 ),
                 TextButton.icon(
                   onPressed: () {
